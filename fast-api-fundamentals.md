@@ -7,8 +7,7 @@
 - [Fundamentos de FastAPI](#fundamentos-de-fastapi)
   - [¿Qué es FastAPI?](#qué-es-fastapi)
   - [Frameworks que utiliza FastAPI por detrás](#frameworks-que-utiliza-fastapi-por-detrás)
-  - [Hello World: creación del entorno de desarrollo](#hello-world-creación-del-entorno-de-desarrollo)
-  - [Hello World: elaborando el código de nuestra primer API](#hello-world-elaborando-el-código-de-nuestra-primer-api)
+  - [Hello World!](#hello-world)
   - [Documentación interactiva de una API](#documentación-interactiva-de-una-api)
 - [Desarmando el framework](#desarmando-el-framework)
   - [Path Operations](#path-operations)
@@ -49,8 +48,29 @@ Los frameworks que utiliza son:
 
 - [Pydantic](https://pydantic-docs.helpmanual.io/): Es un framework que permite trabajar con datos similar a pandas, pero este te permite usar modelos los cuales aprovechara FastAPI para crear la API.
 
-### Hello World: creación del entorno de desarrollo
-### Hello World: elaborando el código de nuestra primer API
+### Hello World!
+
+1. Creamos un entorno virtual para trabajar sobre el. (Hay documentacion, no lo explicaré)
+2. Activamos entorno e instalamos fastapi:
+   - Debemos instalar uvicorn tambien porque no se instala como dependencia de fastapi: `pip install fastapi uvicorn`
+3. Creamos archivo main.py y creamos el hola mundo:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"Hello": "World"}
+```
+
+4. Uniciamos nuestro servidor desde una terminal con el comando: `uvicorn main:app --reload`
+   - `uvicorn`: framework que crea el servidor.
+   - `main:app`: Archivo que contiene nuestra app
+   - `--reload`: Para que actualice el servidor automaticamente
+5. Vamos a nuestro navegador y abrimos nuestro servidor en **127.0.0.1:8000**
+
 ### Documentación interactiva de una API
 
 ## Desarmando el framework

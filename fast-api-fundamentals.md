@@ -6,7 +6,7 @@
 
 - [Fundamentos de FastAPI](#fundamentos-de-fastapi)
   - [¿Qué es FastAPI?](#qué-es-fastapi)
-  - [Ubicación de FastAPI en el ecosistema de Python](#ubicación-de-fastapi-en-el-ecosistema-de-python)
+  - [Frameworks que utiliza FastAPI por detrás](#frameworks-que-utiliza-fastapi-por-detrás)
   - [Hello World: creación del entorno de desarrollo](#hello-world-creación-del-entorno-de-desarrollo)
   - [Hello World: elaborando el código de nuestra primer API](#hello-world-elaborando-el-código-de-nuestra-primer-api)
   - [Documentación interactiva de una API](#documentación-interactiva-de-una-api)
@@ -25,8 +25,30 @@
   - [Tipos de datos especiales](#tipos-de-datos-especiales)
 
 ## Fundamentos de FastAPI
+
 ### ¿Qué es FastAPI?
-### Ubicación de FastAPI en el ecosistema de Python
+
+[FastAPI](https://fastapi.tiangolo.com/) es el framework mas veloz para el desarrollo web con Python. Enfocado para realizar APIs, es el mas rápido en lo que respecta a la velocidad del servidor compitiendo directamente con Node.Js o GO, considerados los lenguajes mas veloces para desarrollo de backend. 
+
+Fue creado por [Sebastian Ramirez](https://twitter.com/tiangolo), es de código abierto y se encuentra en Github. Es usado por empresas como Uber, Windows, Netflix y Office.
+
+### Frameworks que utiliza FastAPI por detrás
+
+> FastAPI es framework que está parado, sobre los hombros de gigantes.
+
+Los frameworks que utiliza son:
+
+![frameworks-que-usa-fast-api-por-detras](https://imgur.com/YW14Abu.png)
+
+- [Uvicorn](https://www.uvicorn.org/): es una librería de Python que funciona de servidor, es decir, permite que cualquier computadora se convierta en un servidor.
+  - Un servidor puede ser:
+    - Una computadora que distribuye tu aplicación.
+    - Un paquete que convierta a tu computadora en esa computadora que distribuya tu aplicación.
+
+- [Starlette](https://www.starlette.io/): es un framework de desarrollo web de bajo nivel, para desarrollar aplicaciones donde se requiere un amplio conocimiento de Python. FastAPI lo toma como base y se encarga de añadirle funcionalidades por encima para que se pueda usar mas fácilmente.
+
+- [Pydantic](https://pydantic-docs.helpmanual.io/): Es un framework que permite trabajar con datos similar a pandas, pero este te permite usar modelos los cuales aprovechara FastAPI para crear la API.
+
 ### Hello World: creación del entorno de desarrollo
 ### Hello World: elaborando el código de nuestra primer API
 ### Documentación interactiva de una API

@@ -73,6 +73,23 @@ def home():
 
 ### Documentación interactiva de una API
 
+FastAPI también parado sobre los hombros de OpenAPI para generar documentación.
+
+- [Open APIs](https://www.openapis.org/): es una especificación que define como describir, crear y visualzar API’s. Permite reconocer si una API está definida adecuadamente. Require de Swagger.
+
+- [Swagger](https://swagger.io/): Es un framework para trabajar API’s.
+- [ReDoc](https://redocly.com/) es un framework alternativo a Swagger, instalado por default con FastAPI.
+
+FastAPI funciona sobre SwaggerUI (User Interface) que permite mostrar graficamente la API documentada. SwaggerUI obtiene especificaciones de Open API y la muestra por Fast API.
+
+Swagger UI: http://127.0.0.1:8000/docs
+
+![swagger-docs](https://imgur.com/QEyJ4xe.png)
+
+ReDoc UI: http://127.0.0.1:8000/redoc
+
+![redoc ui](https://imgur.com/u78SWZP.png)
+
 ## Desarmando el framework
 
 ### Path Operations

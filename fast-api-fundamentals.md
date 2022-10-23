@@ -140,6 +140,33 @@ Los siguientes métodos son menos utilizados y mas complejos:
 - `CONNECT`: El método `CONNECT` establece un túnel hacia el servidor identificado por el recurso.
 
 ### Path Parameters
+
+Imaginemos que tenemos un endpoint para una acción particular. En el ejemplo analicemos twitter.
+
+Por endpoint queremos mostrar un tweet, aqui nuestros endpoints:
+
+```text
+- "/" -> Home
+- "/tweets/22"
+- "/tweets/1"
+- "/tweets/2"
+```
+
+- ¿Qué pasa si la el número de tweets crece de una forma que no te permita utilizar la estrucutura de los endpoints que habiamos trabajado?
+- ¿Es viable crear un endpoint para cada tweet que se escribe?
+
+Para esto tenemos los **Path Parameters**:
+
+Un Path parameter es una variable definida dentro de un Path, que nos permite manejar un valor de manera dinamica.
+
+La definición de un Path Parameter nos **OBLIGA** a pasar la variable siempre en el endpoint.
+
+```
+#Sintaxis de un Path Parameter 👇
+/tweets/"{tweet_id}" -> Particular tweet
+```
+
+
 ### Query Parameters
 ### Request Body y Response Body
 ### Models

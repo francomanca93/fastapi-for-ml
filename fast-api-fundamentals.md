@@ -11,6 +11,8 @@
   - [Documentación interactiva de una API](#documentación-interactiva-de-una-api)
 - [Desarmando el framework](#desarmando-el-framework)
   - [Path Operations](#path-operations)
+    - [Partes del protocolo HTTP](#partes-del-protocolo-http)
+    - [Operations (Métodos)](#operations-métodos)
   - [Path Parameters](#path-parameters)
   - [Query Parameters](#query-parameters)
   - [Request Body y Response Body](#request-body-y-response-body)
@@ -92,7 +94,51 @@ ReDoc UI: http://127.0.0.1:8000/redoc
 
 ## Desarmando el framework
 
+> Nota: Los esquemas explicando los conceptos son del curso dado por [Facundo Garcia Martoni](https://twitter.com/facmartoni)
+
 ### Path Operations
+
+**Path Operation: Es la combinación de una ruta acompañada de un método.**
+
+Está dividido en dos partes:
+
+- **Path/Routes/Endpoints**: Se le llama así a todos los elemento que agregamos a la derecha del dominio. (Tambien llamados endpoints)
+
+- **Operations**: Es exactamente lo mismo que un método HTTP.
+
+```python
+@app.get("/") # Path Operator DECORATOR
+def home(): # Path Operator FUNCTION
+    return {"Hello": "World"}
+```
+
+![path-operations](https://imgur.com/AbgbEeV.png)
+
+#### Partes del protocolo HTTP
+
+- **Headers**: Son esquemas de `key: value` que contienen información sobre el HTTP request y el navegador. Aquí también se encuentran los datos de las cookies. La mayoría de los headers son opcionales.Como los headers HTTP son una parte fundamental de los mensajes entre clientes y servidores, el siguiente recurso puede ser util: [Headers del protocolo HTTP](https://diego.com.es/headers-del-protocolo-http)
+- **Body**: Si se envía información al servidor a través de POST o PUT, esta va en el body.
+- **Method**: Son operaciones que se pueden realizar mediante el protocolo.
+
+#### Operations (Métodos)
+
+[Métodos de petición HTTP by Mozilla](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
+
+Los siguientes métodos son los mas utilizados:
+
+- `GET`: El método `GET` solicita una representación de un recurso específico. Las peticiones que usan el método `GET` sólo deben recuperar datos.
+- `POST`: El método `POST` se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
+- `PUT`: El modo `PUT` reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
+- `DELETE`: El método `DELETE` borra un recurso en específico.
+
+Los siguientes métodos son menos utilizados y mas complejos:
+
+- `OPTIONS`: El método `OPTIONS` es empleado para describir las opciones de comunicación para el recurso de destino.
+- `HEAD`: El método `HEAD` pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.
+- `PATCH`: Para editar partes concretas de un recurso.
+- `TRACE`: El método `TRACE` realiza una prueba de bucle de retorno de mensaje a lo largo de la ruta al recurso de destino.
+- `CONNECT`: El método `CONNECT` establece un túnel hacia el servidor identificado por el recurso.
+
 ### Path Parameters
 ### Query Parameters
 ### Request Body y Response Body

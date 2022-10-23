@@ -166,8 +166,29 @@ La definición de un Path Parameter nos **OBLIGA** a pasar la variable siempre e
 /tweets/"{tweet_id}" -> Particular tweet
 ```
 
-
 ### Query Parameters
+
+Si los Path Parameters son obligatorios, necesitamos alguna forma de tener parametros que no sean obligatorios, bueno, estos son los Query Parameters.
+
+Los Query Parameters son Parámetros opcionales para nuestros Endpoints. Usos:
+
+- Para de aplicar búsquedas o filtros del recurso que le devolveremos a los usuarios de nuestra API.
+
+Para indicar que comenzaremos a agregar un query parameter usamos el símbolo de **interrogación** `?` seguido del nombre del campo con el valor a aplicar.
+
+Si necesitas mandar más de un parámetro opcional, lo único que hay que hacer es concatenar con el símbolo de **aspersan** `&` y agregar más parámetros.
+
+![query-parameter](https://imgur.com/XwD1fhS.png)
+
+Ejemplo de uso:
+
+```
+
+http://127.0.0.1:8000/items/?skip=0&limit=10
+/users/{user_id}/details/?age=20&height=184
+```
+
+
 ### Request Body y Response Body
 ### Models
 
